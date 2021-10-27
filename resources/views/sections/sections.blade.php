@@ -157,6 +157,23 @@ id="exampleFormControlSelect1" name="class_id">
 
 </div>
 
+
+
+
+<div class="form-group">
+    <label for="exampleFormControlSelect2">Example multiple select</label>
+    <select multiple class="form-control" name="teacher_id[]" id="exampleFormControlSelect2">
+
+    @foreach($sec->teachers as $t)
+      <option selected value="{{$t->id}}">{{$t->Name}}</option>
+     @endforeach
+
+@foreach($teacher as $t)
+      <option value="{{$t->id}}">{{$t->Name}}</option>
+     @endforeach
+    </select>
+  </div>
+
 <input type="checkbox" name="status" value="{{$sec->status}}" {{$sec->status == 1 ? 'checked' : ''}}> {{trans('main_trans.status')}}
 
 
@@ -319,6 +336,18 @@ aria-labelledby="exampleModalLabel" aria-hidden="true">
                
             </select>
         </div>
+
+        <div class="form-group">
+    <label for="exampleFormControlSelect2">Example multiple select</label>
+    <select multiple class="form-control" name="teacher_id[]" id="exampleFormControlSelect2">
+@foreach($teacher as $t)
+      <option value="{{$t->id}}">{{$t->Name}}</option>
+     @endforeach
+    </select>
+  </div>
+
+
+
    
 
   </div>

@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Grade;
 use App\Models\section;
 use App\Models\classroom;
+use App\Models\teacher;
+
 
 
 
@@ -19,8 +21,10 @@ class sectionController extends Controller
        $grade = Grade::with(['sections'])->get();
 
        $class = classroom::get();
+
+       $teacher = teacher::get();
      
-        return view ('sections.sections',compact('grade','class'));
+        return view ('sections.sections',compact('grade','class','teacher'));
     }
 
 
@@ -42,6 +46,8 @@ class sectionController extends Controller
         $section->status = 1;
 
         $section->save();
+
+        $section->teachers()->attach($request->teacher_id);
        
 
        $msg = array('message' => trans('main_trans.success') ,
@@ -74,6 +80,13 @@ class sectionController extends Controller
         }
 
         $section->save();
+
+        if(isset($request->teacher_id))
+        {
+            $section->teachers()->sync($request->teacher_id);
+        }else{
+            $section->teachers()->sync(array());
+        }
 
         $msg = array('message' => trans('main_trans.update') ,
         'alert-type' => 'success');

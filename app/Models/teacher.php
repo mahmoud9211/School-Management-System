@@ -30,5 +30,10 @@ class teacher extends Model
         return $this->hasOne(specialization::class,'id','Specialization_id');
     }
 
+    public function sections()
+    {
+        return $this->belongsToMany(section::class,'section_teachers');
+    }
+
 
 }
