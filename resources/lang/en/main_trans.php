@@ -88,6 +88,17 @@ return [
  'Attachments' => 'Attachments',
  'Name_Father_' => "Father's Name",
  'Job_Father_' => "Father's Job",
+ 'teachers_all' => 'Teachers List',
+ 'techers' => 'Teachers',
+ 'teacher_name' => 'Teacher Name',
+ 'gender' => 'Gender',
+ 'joining_date' => 'Joining Date',
+ 'spec' => 'Specialization',
+'Add_Teacher' => 'Add Teacher',
+'teacher_Name_ar' => 'Teacher Name ar',
+'teacher_Name_en' => 'Teacher Name en',
+'Address' => 'Address',
+
 
 
 

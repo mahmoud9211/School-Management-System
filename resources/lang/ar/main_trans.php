@@ -88,6 +88,19 @@ return [
  'Attachments' => 'المرفقات',
  'Name_Father_' => "اسم الاب",
  'Job_Father_' => "وظيفة الاب",
+  'teachers_all' => 'قائمة المعلمين',
+  'techers' => 'المعلمون',
+  'teacher_name' => 'اسم المعلم',
+  'gender' => 'النوع',
+  'joining_date' => ' تاريخ التعيين',
+  'spec' => 'التخصص',
+  'Add_Teacher' => 'اضافة معلم',
+  'teacher_Name_ar' => 'اسم المعلم بالعربيه',
+'teacher_Name_en' => 'اسم المعلم بالانجليزيه',
+'Address' => 'العنوان',
+
+
+ 
 
 
 

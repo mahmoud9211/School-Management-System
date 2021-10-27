@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\GradeController;
 use App\Http\Controllers\classroomController;
 use App\Http\Controllers\sectionController;
+use App\Http\Controllers\teacherController;
+
 
 
 
@@ -46,6 +48,8 @@ Route::group(
         Route::post('/sections/delete',[sectionController::class,'delete'])->name('sections.delete');
 
         Route::view('AddParent','livewire.showForm');
+
+        Route::resource('teachers',teacherController::class);
 
       
 

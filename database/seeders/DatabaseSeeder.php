@@ -20,7 +20,9 @@ class DatabaseSeeder extends Seeder
         $this->call([
             bloodtableseeder::class,
             nationalitytableseeder::class,
-            religiontableseeder::class
+            religiontableseeder::class,
+            gendertableseeder::class,
+            specializationtableseeder::class,
            
         ]);
      }
