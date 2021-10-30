@@ -5,6 +5,8 @@ use App\Http\Controllers\GradeController;
 use App\Http\Controllers\classroomController;
 use App\Http\Controllers\sectionController;
 use App\Http\Controllers\teacherController;
+use App\Http\Controllers\studentController;
+
 
 
 
@@ -51,6 +53,15 @@ Route::group(
 
         Route::resource('teachers',teacherController::class);
 
+        Route::resource('students',studentController::class);
+
+        Route::get('/students/getclassbyajax/{Grade_id}',[studentController::class,'getclasses']);
+
+        Route::get('/students/getsectionbyajax/{Classroom_id}',[studentController::class,'getsections']);
+
+
+        
+        
       
 
     });

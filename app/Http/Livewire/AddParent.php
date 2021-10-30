@@ -71,8 +71,8 @@ class AddParent extends Component
         $this->validate([
             'Email' => 'required|unique:myparents,email,'.$this->id,
             'Password' => 'required',
-            'Name_Father' => 'required|regex:/^[a-zA-Z]+$/u',
-            'Name_Father_en' => 'required',
+            'Name_Father' => 'required',
+            'Name_Father_en' => 'required|regex:/^[a-zA-Z]+$/u',
             'Job_Father' => 'required',
             'Job_Father_en' => 'required',
             'National_ID_Father' => 'required|regex:/^[0-9]+$/|min:14|max:14' . $this->id,

@@ -98,6 +98,24 @@ return [
 'teacher_Name_ar' => 'Teacher Name ar',
 'teacher_Name_en' => 'Teacher Name en',
 'Address' => 'Address',
+'students' => 'Students',
+'students_all' => 'All Students',
+'students_add' => 'Add Students',
+'personal_information' => 'Personal Information',
+'name_ar' => 'Name (ar)',
+'name_en' => 'Name (en)',
+'Nationality' => 'Nationality',
+'blood_type' => 'Blood Type',
+'Date_of_Birth' => 'Date Of Birth',
+'Student_information' => 'Student information',
+'parent' => 'Parent',
+'academic_year' => 'Academic year',
+'delete_student' => 'Student Delete',
+'name' => 'Name',
+'section' => 'Section',
+'Grade' => 'Grade'
+
+
 
 
 

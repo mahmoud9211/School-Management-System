@@ -98,6 +98,25 @@ return [
   'teacher_Name_ar' => 'اسم المعلم بالعربيه',
 'teacher_Name_en' => 'اسم المعلم بالانجليزيه',
 'Address' => 'العنوان',
+'students' => 'الطلاب',
+'students_all' => 'كل الطلاب',
+'students_add' => 'إضافة طلاب',
+'personal_information' => 'المعلومات الشخصيه ',
+'name_ar' => 'الاسم بالعربيه',
+'name_en' => 'الاسم بالانجليزيه',
+'Nationality' => 'الجنسيه',
+'blood_type' => 'فصيلة الدم',
+'Date_of_Birth' => 'تاريخ الميلاد',
+'Student_information' => 'معلومات الطالب',
+'parent' => 'الوالد',
+'academic_year' => 'السنه الدراسيه',
+'delete_student' => 'حذف الطالب',
+'name' => 'الاسم',
+'section' => 'القسم',
+'Grade' => 'المرحله الدراسيه'
+
+
+
 
 
  
