@@ -113,7 +113,20 @@ return [
 'delete_student' => 'حذف الطالب',
 'name' => 'الاسم',
 'section' => 'القسم',
-'Grade' => 'المرحله الدراسيه'
+'Grade' => 'المرحله الدراسيه',
+'add_attachments' => 'إضافة مرفقات',
+'onlyjpg-png-jpeg-gif' => 'JPG/PNG/JPEG/GIF فقط',
+'student_details' => 'تفاصيل الطالب',
+'student_att' => 'مرفقات الطالب',
+'filename' => 'اسم الملف',
+'created_at' => 'التاريخ',
+'Download' => 'تحميل',
+'delete_' => 'حذف',
+
+
+
+
+
 
 
 

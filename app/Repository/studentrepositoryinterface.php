@@ -16,6 +16,14 @@ interface studentrepositoryinterface {
 
     public function delete($request);
 
+    public function student_details($id);
+
+    public function add_attachment ($request);
+
+    public function download($studentsname,$filename);
+
+
+
 
 
 }

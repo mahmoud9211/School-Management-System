@@ -113,7 +113,16 @@ return [
 'delete_student' => 'Student Delete',
 'name' => 'Name',
 'section' => 'Section',
-'Grade' => 'Grade'
+'Grade' => 'Grade',
+'add_attachments' => 'Add Attachments',
+'onlyjpg-png-jpeg-gif' => 'Only JPG/PNG/JPEG/GIF',
+'student_details' => 'Student Details',
+'student_att' => 'Student Attachments',
+'filename' => 'File Name',
+'created_at' => 'Created at',
+'Download' => 'Download',
+'delete_' => 'Delete',
+
 
 
 

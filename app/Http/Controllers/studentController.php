@@ -56,7 +56,7 @@ class studentController extends Controller
      */
     public function show($id)
     {
-        //
+        return $this->student->student_details($id);
     }
 
     /**
@@ -115,6 +115,18 @@ class studentController extends Controller
         return $data;
 
 
+    }
+
+    public function attachment (Request $request)
+    {
+
+
+        return $this->student->add_attachment($request);
+    }
+
+    public function download ($studentsname,$filename)
+    {
+       return $this->student->download($studentsname,$filename);
     }
 
     

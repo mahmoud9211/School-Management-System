@@ -10,6 +10,10 @@ use App\Models\Grade;
 use App\Models\section;
 use App\Models\classroom;
 use App\Models\student;
+use App\Models\image;
+use Illuminate\Support\Facades\Storage;
+
+use DB;
 
 
 
@@ -56,23 +60,50 @@ class studentrepository implements studentrepositoryinterface {
             'academic_year' => 'required'
         ]);
 
+        DB::beginTransaction();
+
        try{
 
-        student::create([
-       'name' => ['en' => $request->name_en, 'ar' => $request->name_ar],
-       'email' => $request->email,
-       'password' => $request->password,
-       'gender_id' => $request->gender_id,
-       'nationalitie_id' => $request->nationalitie_id,
-       'blood_id' => $request->blood_id,
-       'Date_Birth' => $request->Date_Birth,
-       'Grade_id' => $request->Grade_id,
-       'Classroom_id' => $request->Classroom_id,
-       'section_id' => $request->section_id,
-       'parent_id' => $request->parent_id,
-       'academic_year' => $request->academic_year
-        ]);
 
+        $student = new student();
+
+     
+        $student->name = ['en' => $request->name_en, 'ar' => $request->name_ar];
+        $student->email = $request->email;
+        $student->password = $request->password;
+        $student->gender_id = $request->gender_id;
+        $student->nationalitie_id = $request->nationalitie_id;
+        $student->blood_id = $request->blood_id;
+        $student->Date_Birth = $request->Date_Birth;
+        $student->Grade_id = $request->Grade_id;
+        $student->Classroom_id = $request->Classroom_id;
+        $student->section_id = $request->section_id;
+        $student->parent_id = $request->parent_id;
+        $student->academic_year = $request->academic_year;
+        $student->save();
+
+        if ($request->hasfile('file_name'))
+        {
+
+            foreach($request->file('file_name') as $file)
+            {
+               $name = $file->getClientOriginalName();
+              $file->storeAs('attach/students/'.$request->name_en,$name,'upload_attachs');
+
+               $image = new image();
+               $image->file_name = $name;
+               $image->imageable_id = $student->id;
+               $image->imageable_type = 'App\Models\student';
+               $image->save();
+
+            }
+        }
+
+
+
+
+
+        DB::commit();
         $msg = array('message' => trans('main_trans.success'),
         'alert-type' => 'success');
 
@@ -81,6 +112,7 @@ class studentrepository implements studentrepositoryinterface {
 
 
        }catch (Exception $e) {
+        DB::rollback();
         return redirect()->back()->with(['error' => $e->getMessage()]);
     }
       
@@ -156,5 +188,65 @@ class studentrepository implements studentrepositoryinterface {
     return redirect()->back()->with($msg);
 }
 
+
+public function student_details($id)
+
+{
+  
+
+  $student = student::find($id);
+   $image = image::where('imageable_id',$id)->get();
+
+    return view ('students.details',compact('student','image'));
+ 
+  
+}
+
+public function add_attachment ($request)
+{
+
+    foreach ($request->file('photos') as $photo)
+    {
+
+
+        try{
+        $name = $photo->getClientOriginalName();
+
+        $photo->storeAs('attach/students/'.$request->student_name,$name,'upload_attachs');
+
+        $image = new image();
+        $image->file_name = $name;
+        $image->imageable_id = $request->student_id;
+        $image->imageable_type = 'App\Models\student';
+        $image->save();
+
+
+
+        $msg = array('message' => trans('main_trans.success'),
+        'alert-type' => 'success');
+
+        return redirect()->back()->with($msg); 
+        }catch (Exception $e) {
+            DB::rollback();
+            return redirect()->back()->with(['error' => $e->getMessage()]);
+        }
+
+       
+
+
+
+    }
+}
+
+
+public function download($studentsname,$filename)
+
+
+{
+
+    return response()->download(public_path('attach/students/'.$studentsname.'/'.$filename));
+
+
+}
 
 }

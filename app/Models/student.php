@@ -48,4 +48,17 @@ class student extends Model
     {
         return $this->hasOne(classroom::class,'id','Classroom_id');
     }
+
+
+
+
+    public function image()
+    {
+        return $this->morphMany(image::class, 'imageable');
+    }
+
+    public function myparent ()
+    {
+        return $this->hasOne(myparent::class,'id','parent_id');
+    }
 }

@@ -40,7 +40,7 @@
                     </div>
                 @endif
 
-                <form method="post"  action="{{route('students.store')}}" autocomplete="off">
+                <form method="post"  action="{{route('students.store')}}" autocomplete="off" enctype="multipart/form-data">
                     @csrf
                     <h6 style="font-family: 'Cairo', sans-serif;color: blue">{{trans('main_trans.personal_information')}}</h6><br>
                         <div class="row">
@@ -179,6 +179,14 @@
                             </div>
                         </div>
                         </div><br>
+ 
+             <div class="form-group">           
+           <label> {{trans('main_trans.add_attachments')}} <span class="text-danger"> {{trans('main_trans.onlyjpg-png-jpeg-gif')}} </span> </label>
+          <input type="file" accept="image/*" name="file_name[]" class="form-control" multiple >
+</div>
+          <br>
+          <br>
+
                     <button class="btn btn-success btn-sm nextBtn btn-lg pull-right" type="submit">{{trans('main_trans.submit')}}</button>
                 </form>
 

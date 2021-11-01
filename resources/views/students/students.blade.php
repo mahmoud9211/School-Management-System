@@ -64,7 +64,7 @@
                             <td>
                                 <a href="{{route('students.edit',$student->id)}}" class="btn btn-info btn-sm" role="button" aria-pressed="true"><i class="fa fa-edit"></i></a>
                                 <button type="button" class="btn btn-danger btn-sm" data-toggle="modal" data-target="#del{{ $student->id }}" title="{{ trans('main_trans.Delete') }}"><i class="fa fa-trash"></i></button>
-                                <a href="#" class="btn btn-warning btn-sm" role="button" aria-pressed="true"><i class="fa fa-eye"></i></a>
+                                <a href="{{route('students.show',$student->id)}}" class="btn btn-warning btn-sm" role="button" aria-pressed="true"><i class="fa fa-eye"></i></a>
                             </td>
                         </tr>
 

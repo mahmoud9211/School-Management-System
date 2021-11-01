@@ -59,6 +59,10 @@ Route::group(
 
         Route::get('/students/getsectionbyajax/{Classroom_id}',[studentController::class,'getsections']);
 
+        Route::post('/students/attachment',[studentController::class,'attachment'])->name('students.attachment');
+
+        Route::get('attachments_download/{studentsname}/{filename}',[studentController::class,'download']);
+
 
         
         
