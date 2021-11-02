@@ -20,7 +20,7 @@ interface studentrepositoryinterface {
 
     public function add_attachment ($request);
 
-    public function download($studentsname,$filename);
+   public function download_attachment($studentsname,$filename);
 
 
 

@@ -122,6 +122,23 @@ return [
 'created_at' => 'Created at',
 'Download' => 'Download',
 'delete_' => 'Delete',
+'students_promotions' => 'students promotions',
+'old_grade' => 'Old Grade',
+'new_grade' => 'New Grade',
+'student_num_warning' => 'There are no students based on the information you inserted',
+'students_promotions_list' => 'Student Promotions List',
+'previous_grade' => 'Previous Grade',
+'previous_classroom' => 'Previous Classroom',
+'previous_section' => 'Previous Section',
+'current_grade' => 'Current Grade',
+'academic_year_current' => 'Current Academic Year',
+'current_classroom' => 'Current Classroom',
+'current_section' => 'Current Section',
+'Undo all' => 'Undo all',
+'undoall_students_msg' => 'Are you sure that you want to undo all students promotions ? ',
+
+
+
 
 
 

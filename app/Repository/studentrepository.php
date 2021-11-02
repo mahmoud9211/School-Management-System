@@ -87,8 +87,10 @@ class studentrepository implements studentrepositoryinterface {
 
             foreach($request->file('file_name') as $file)
             {
-               $name = $file->getClientOriginalName();
-              $file->storeAs('attach/students/'.$request->name_en,$name,'upload_attachs');
+
+               
+                $name = $file->getClientOriginalName();
+                $file->storeAs('attachments/students/'.$student->name, $file->getClientOriginalName(),'upload_attachments');
 
                $image = new image();
                $image->file_name = $name;
@@ -210,9 +212,13 @@ public function add_attachment ($request)
 
 
         try{
-        $name = $photo->getClientOriginalName();
 
-        $photo->storeAs('attach/students/'.$request->student_name,$name,'upload_attachs');
+
+            $name = $photo->getClientOriginalName();
+            $photo->storeAs('attachments/students/'.$request->student_name, $name,'upload_attachments');
+
+
+     
 
         $image = new image();
         $image->file_name = $name;
@@ -238,15 +244,15 @@ public function add_attachment ($request)
     }
 }
 
-
-public function download($studentsname,$filename)
-
-
-{
-
-    return response()->download(public_path('attach/students/'.$studentsname.'/'.$filename));
+ public function download_attachment($studentsname,$filename){
 
 
-}
+    return response()->download(public_path('Attachments/students/'.$studentsname.'/'.$filename));
+
+
+ }
+
+
+
 
 }

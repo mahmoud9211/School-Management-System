@@ -104,6 +104,10 @@
                         <ul id="calendar-menu4" class="collapse" data-parent="#sidebarnav">
                             <li> <a href="{{route('students.index')}}">{{trans('main_trans.students_all')}} </a> </li>
                             <li> <a href="{{route('students.create')}}">{{trans('main_trans.students_add')}} </a> </li>
+                            <li> <a href="{{route('promotions.index')}}">{{trans('main_trans.students_promotions_list')}} </a> </li>
+                            <li> <a href="{{route('promotions.create')}}">{{trans('main_trans.students_promotions')}} </a> </li>
+
+
 
 
                         </ul>

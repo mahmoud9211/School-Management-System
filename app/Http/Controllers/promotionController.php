@@ -4,27 +4,24 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Repository\studentrepositoryinterface;
+use App\Repository\promotionrepositoryinterface;
 
-use App\Models\classroom;
-use App\Models\section;
-
-
-
-
-class studentController extends Controller
+class promotionController extends Controller
 {
-    
- protected $student;
+  
+protected $promotion;
 
- public function __construct(studentrepositoryinterface $student)
+ public function __construct(promotionrepositoryinterface $promotion)
+
  {
-   $this->student = $student;
+     $this->promotion = $promotion;
+
  }
+
 
     public function index()
     {
-      return $this->student->index();
+        return $this->promotion->index();
     }
 
     /**
@@ -34,7 +31,7 @@ class studentController extends Controller
      */
     public function create()
     {
-      return $this->student->create_teacher_page();
+        return $this->promotion->create();
     }
 
     /**
@@ -45,7 +42,7 @@ class studentController extends Controller
      */
     public function store(Request $request)
     {
-        return $this->student->students_store($request);
+        return $this->promotion->store($request);
     }
 
     /**
@@ -56,7 +53,7 @@ class studentController extends Controller
      */
     public function show($id)
     {
-        return $this->student->student_details($id);
+        //
     }
 
     /**
@@ -67,7 +64,7 @@ class studentController extends Controller
      */
     public function edit($id)
     {
-        return $this->student->edit($id);
+        //
     }
 
     /**
@@ -79,7 +76,7 @@ class studentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        return $this->student->update($request,$id);
+        //
     }
 
     /**
@@ -90,44 +87,12 @@ class studentController extends Controller
      */
     public function destroy(Request $request)
     {
-        return $this->student->delete($request);
+      return $this->promotion->destroy($request);
     }
 
 
-
-    public function getclasses ($id)
-
+    public function delete($id)
     {
-
-        $data = classroom::where('grade_id',$id)->pluck('name','id');
-
-        return $data;
-
-
+      return $this->promotion->delete($id);
     }
-
-    public function getsections ($id)
-
-    {
-
-        $data = section::where('class_id',$id)->pluck('name','id');
-
-        return $data;
-
-
-    }
-
-    public function attachment (Request $request)
-    {
-
-
-        return $this->student->add_attachment($request);
-    }
-
-    public function download($studentsname,$filename)
-    {
-       return $this->student->download_attachment($studentsname,$filename);
-    }
-
-    
 }

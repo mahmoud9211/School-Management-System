@@ -131,7 +131,7 @@
                                                     <td colspan="2">
                                                         <a class="btn btn-outline-info btn-sm"
 
-                                                        href="{{url('attachments_download')}}//{{ $image->imageable->name }}/{{$image->file_name}}"
+                                                        href="{{url('attachments_download')}}/{{ $image->imageable->name }}/{{$image->file_name}}"
                                                         role="button"><i class="fa fa-download"></i>&nbsp; {{trans('main_trans.Download')}}</a>
 
                                                         <button type="button" class="btn btn-outline-danger btn-sm"

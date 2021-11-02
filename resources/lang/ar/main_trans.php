@@ -122,6 +122,26 @@ return [
 'created_at' => 'التاريخ',
 'Download' => 'تحميل',
 'delete_' => 'حذف',
+'students_promotions' => 'ترقيات الطلاب',
+'old_grade' => 'المرحله القديمه',
+'new_grade' => 'المرحله الجديده',
+'student_num_warning' => 'لا يوجد طلاب استنادا الي المعلومات المدخله',
+'students_promotions_list' => 'قائمة ترقيات الطلاب',
+'previous_grade' => 'المرحلة الدراسية السابقة',
+'previous_classroom' => 'الصف الدراسي السابق',
+'previous_section' => 'القسم الدراسي السابق',
+'current_grade' => 'المرحلة الدراسية الحالي',
+'academic_year_current' => 'السنة الدراسية الحالية',
+'current_classroom' => 'الصف الدراسي الحالي',
+'current_section' => 'القسم الدراسي الحالي',
+'Undo all' => 'تراجع عن الكل',
+'undoall_students_msg' => 'هل انت متاك من عملية تراجع كافة الطلاب؟',
+
+
+
+
+
+
 
 
 

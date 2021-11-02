@@ -10,6 +10,9 @@ use App\Repository\teacherrepository;
 use App\Repository\studentrepositoryinterface;
 use App\Repository\studentrepository;
 
+use App\Repository\promotionrepositoryinterface;
+use App\Repository\promotionrepository;
+
 
 class RepoServiceProvider extends ServiceProvider
 {
@@ -23,6 +26,8 @@ class RepoServiceProvider extends ServiceProvider
         $this->app->bind(teacherrepositoryinterface::class,teacherrepository::class);
 
         $this->app->bind(studentrepositoryinterface::class,studentrepository::class);
+
+        $this->app->bind(promotionrepositoryinterface::class,promotionrepository::class);
 
 
      

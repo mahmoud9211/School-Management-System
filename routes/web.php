@@ -6,6 +6,8 @@ use App\Http\Controllers\classroomController;
 use App\Http\Controllers\sectionController;
 use App\Http\Controllers\teacherController;
 use App\Http\Controllers\studentController;
+use App\Http\Controllers\promotionController;
+
 
 
 
@@ -61,8 +63,11 @@ Route::group(
 
         Route::post('/students/attachment',[studentController::class,'attachment'])->name('students.attachment');
 
-        Route::get('attachments_download/{studentsname}/{filename}',[studentController::class,'download']);
+        Route::get('attachments_download/{studentsname}/{filename}',[studentController::class,'download'])->name('attachments_download');
 
+        Route::resource('promotions',promotionController::class);
+
+        Route::post('/promotions/delete{id}',[promotionController::class,'delete'])->name('promotions.delete');
 
         
         
