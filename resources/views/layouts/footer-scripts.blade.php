@@ -156,6 +156,105 @@ $(document).ready(function(){
 
 </script>
 
+<script>
+
+$(document).ready(function(){
+
+   $('select[name="Grade_id"]').on('change',function(){
+
+   let Grade_id = $(this).val();
+
+   if(Grade_id){
+     
+     $.ajax({
+      type : 'get',
+      dataType : 'json',
+      url : '/students/getclassbyajax/' + Grade_id,
+
+      success:function(data){
+
+        $('select[name="Classroom_id"]').empty();
+        $('select[name="Classroom_id"]').append('<option selected disabled> choose  </option>');
+
+        $.each(data,function(key,value){
+       
+
+      $('select[name="Classroom_id"]').append('<option value= "'+key +'">' +value+ '</option>');
+
+
+        });
+
+      }
+     
+
+     });
+    
+
+   }
+
+
+   }) 
+
+
+
+
+});
+
+
+
+
+</script>
+
+
+<script>
+
+$(document).ready(function(){
+
+   $('select[name="Classroom_id"]').on('change',function(){
+
+   let Classroom_id = $(this).val();
+
+   if(Classroom_id){
+     
+     $.ajax({
+      type : 'get',
+      dataType : 'json',
+      url : '/students/getsectionbyajax/' + Classroom_id,
+
+      success:function(data){
+
+        $('select[name="section_id"]').empty();
+
+        $.each(data,function(key,value){
+       
+
+      $('select[name="section_id"]').append('<option value= "'+key +'">' +value+ '</option>');
+
+
+        });
+
+      }
+     
+
+     });
+    
+
+   }
+
+
+   }) 
+
+
+
+
+});
+
+
+
+
+</script>
+
+
 
 
   

@@ -7,6 +7,10 @@ use App\Http\Controllers\sectionController;
 use App\Http\Controllers\teacherController;
 use App\Http\Controllers\studentController;
 use App\Http\Controllers\promotionController;
+use App\Http\Controllers\graduationController;
+use App\Http\Controllers\feesController;
+
+
 
 
 
@@ -69,7 +73,11 @@ Route::group(
 
         Route::post('/promotions/delete{id}',[promotionController::class,'delete'])->name('promotions.delete');
 
-        
+        Route::resource('graduation',graduationController::class);
+
+
+        Route::resource('fees',feesController::class);
+
         
       
 

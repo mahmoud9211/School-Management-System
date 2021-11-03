@@ -136,6 +136,12 @@ return [
 'current_section' => 'القسم الدراسي الحالي',
 'Undo all' => 'تراجع عن الكل',
 'undoall_students_msg' => 'هل انت متاك من عملية تراجع كافة الطلاب؟',
+'garduation_add' => 'اضافة متخرجين',
+'garduation_list' => 'قائمة المتخرجين',
+'Accountant' => 'الحسابات',
+'study_fees' => ' الرسوم الدراسيه',
+
+
 
 
 

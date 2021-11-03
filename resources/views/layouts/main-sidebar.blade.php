@@ -106,10 +106,28 @@
                             <li> <a href="{{route('students.create')}}">{{trans('main_trans.students_add')}} </a> </li>
                             <li> <a href="{{route('promotions.index')}}">{{trans('main_trans.students_promotions_list')}} </a> </li>
                             <li> <a href="{{route('promotions.create')}}">{{trans('main_trans.students_promotions')}} </a> </li>
+                            <li> <a href="{{route('graduation.create')}}">{{trans('main_trans.garduation_add')}} </a> </li>
+                            <li> <a href="{{route('graduation.index')}}">{{trans('main_trans.garduation_list')}} </a> </li>
 
 
 
 
+
+
+                        </ul>
+                    </li>
+
+
+                    <li>
+                        <a href="javascript:void(0);" data-toggle="collapse" data-target="#calendar-menu5">
+                            <div class="pull-left"><i class="ti-calendar"></i><span
+                                    class="right-nav-text">{{trans('main_trans.Accountant')}}</span></div>
+                            <div class="pull-right"><i class="ti-plus"></i></div>
+                            <div class="clearfix"></div>
+                        </a>
+
+                        <ul id="calendar-menu5" class="collapse" data-parent="#sidebarnav">
+                            <li> <a href="{{route('fees.index')}}">{{trans('main_trans.study_fees')}} </a> </li>
                         </ul>
                     </li>
                     

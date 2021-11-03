@@ -15,5 +15,15 @@ interface promotionrepositoryinterface {
     
     public function delete($id);
 
+    public function Add_graduation_page();
+
+    public function store_graduation($request);
+
+    public function graduation_index();
+
+    public function graduation_update($request);
+
+    public function delete_graduated($request);
+
 
 }

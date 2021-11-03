@@ -179,4 +179,69 @@ public function delete($id)
 }
 
 
+
+
+    public function Add_graduation_page ()
+
+    {
+      $grades = Grade::get();
+
+      return view ('students.add_graduation',compact('grades'));
+    }
+
+    public function store_graduation ($request)
+    {
+
+        student::where('Grade_id',$request->Grade_id)->where('Classroom_id',$request->Classroom_id)->
+        where('section_id',$request->section_id)->delete();
+
+        $msg = array('message' =>trans('main_trans.success'),
+        'alert-type' => 'info'); 
+        
+        return Redirect()->back()->with($msg); 
+
+
+
+    }
+
+
+    public function graduation_index ()
+    {
+        $graduation = student::onlyTrashed()->get();
+
+        return view ('students.graduation_index',compact('graduation'));
+    }
+
+    public function graduation_update($request)
+    {
+        $id = $request->id;
+
+        student::withTrashed()->where('id',$id)->restore();
+
+        $msg = array('message' =>trans('main_trans.success'),
+        'alert-type' => 'info'); 
+        
+        return Redirect()->back()->with($msg); 
+
+
+
+    }
+
+    public function delete_graduated ($request)
+
+    {
+
+        $id = $request->id;
+
+        student::withTrashed()->where('id',$id)->forceDelete();
+
+        $msg = array('message' =>trans('main_trans.success'),
+        'alert-type' => 'info'); 
+        
+        return Redirect()->back()->with($msg); 
+    }
+
+
+
+
 }

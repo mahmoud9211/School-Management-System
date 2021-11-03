@@ -136,6 +136,10 @@ return [
 'current_section' => 'Current Section',
 'Undo all' => 'Undo all',
 'undoall_students_msg' => 'Are you sure that you want to undo all students promotions ? ',
+'garduation_add' => 'Add Graduations',
+'garduation_list' => 'Graduation List',
+'Accountant' => 'Accountant',
+'study_fees' => 'Study Fees',
 
 
 
